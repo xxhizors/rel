@@ -8,7 +8,7 @@
 
 Build a learning medium in the gap between long-form and reels: **short, human-verified cards**, **connected into a graph** so they add up to real depth. A card takes 1–2 minutes and carries one idea. Cards are grouped into **decks** of about 10–15 minutes: the smallest thing that stands on its own and gives the satisfaction of finishing something meaningful, without being so heavy that people quit. **Tracks** of decks take a learner from not knowing to understanding, one sitting at a time.
 
-The product is not a format or an app. It is a **growing library of verified, connected knowledge**, with incentives designed so that learning, not attention, is what gets rewarded. Text is the core medium; audio, newsletters, courses and creator tools are all just ways of presenting the same graph.
+The product is not a format or an app. It is a **growing library of verified, connected knowledge**, with incentives designed so that learning, not attention, is what gets rewarded. No single medium is the core: a card uses whatever mix of text, visuals, audio, video or interaction best conveys its idea. Web, email, audio, courses and creator tools are all just ways of presenting the same graph.
 
 **One line:** small effort per card, real depth over time, and a format that ends rather than one that keeps you scrolling.
 
@@ -77,6 +77,7 @@ _The earlier_ `about` _relation (card → topic) is replaced by **tags**, which 
 - **Sizes are targets, not limits** _(agreed)_. Card (1–2 min) and deck (10–15 min) sizes are starting points, tuned for everyone using learner data such as time on card and where learners drop off.
 - **No single-card decks** _(agreed)_. A deck must be big enough to be a meaningful, standalone sitting.
 - **Checks live at the end of a deck** _(agreed)_. Cards contain no checks. Checks are offered at Finish deck and again days later; they are always optional.
+- **No core medium** _(agreed)_. Text is not required; each card uses whatever media best convey its idea.
 - **Closure** _(proposed)_. If a card in a deck requires a card outside it, either the deck includes that card, or the deck has a `requires` deck relation to a deck that does.
 
 ### Under discussion (not yet agreed)
@@ -87,7 +88,7 @@ _The earlier_ `about` _relation (card → topic) is replaced by **tags**, which 
 - **Deck completion.** Is a deck complete when every card is complete, or when Finish deck is pressed?
 - **Track progress formula.** Is it decks completed / decks in track, or weighted by cards?
 - **Already-seen cards.** In deck B, should a card the learner completed in deck A be marked as "seen before" (and maybe used as a spaced-review moment)?
-- **Is text still the core medium?** The vision says text is the core medium (cheap to write, easy to verify, can be read aloud as audio). Cards can now be any mix of media. Is text required in every card, preferred, or just one option?
+- **Text equivalent for non-text media.** Text is no longer required. Should every non-text media item still carry a short text equivalent (transcript, caption, alt text)? Without one, verification, search, AI drafting, accessibility and audio output all get harder.
 - **Hooks.** The old card started with a hook (a question that makes you want the answer). Is a hook now a deck-level thing (the deck's opening), optional on cards, or dropped?
 - **What replaces the fixed structure against clickbait?** The fixed template was one of the anti-clickbait defences (see Incentives). Without it, a written review standard for cards and decks has to do that job.
 - **Card ownership.** Who can edit a card that other authors' decks reuse?
@@ -157,7 +158,7 @@ No existing product combines all three: **human-verified cards, a connected prer
 | Reels, shorts | Instant and easy to start | Half-knowledge, distracting, nothing retained | Optional recall and spacing; cards connect |
 | Inshorts, news aggregators | Short and fast | News, not learning; no continuity; engagement creep | Evergreen concepts; news is only a way in |
 | Blinkist, Headway | Human-written distillations, audio | Book-shaped; each summary stands alone; no graph | Concept-level cards connected across sources |
-| Brilliant, Imprint | Structured, visual, interactive | Closed catalogue; expensive to produce; STEM-heavy | Text-first and cheap to write; open to creators later |
+| Brilliant, Imprint | Structured, visual, interactive | Closed catalogue; expensive to produce; STEM-heavy | Any medium, chosen per card; open to creators later |
 | ByteByteGo and similar | Short visual technical explainers | One creator; no decks or recall | Prerequisite decks, with optional recall checks |
 | Duolingo | Habit, completion, spaced repetition | Languages only; leans on streak anxiety | Same learning science, no anxiety-based gamification |
 | Coursera, Udemy | Complete courses, certificates | Hours long; most learners drop off | Decks of 10–15 minutes; each deck is a win |
@@ -184,7 +185,7 @@ It fits best as a **structured, verified layer underneath other media**, not as 
 | AI (drafting, structuring, suggesting links) | AI drafts, splits long content into cards, proposes edges and recall questions; a human verifies | Speeds up writing without weakening the human-verification moat |
 | Long-form (videos, books, talks) | Cards link out to the best long-form source under "Go deeper"; creators turn their long content into decks | Cards make long-form approachable rather than competing with it |
 | News | Current events used as hooks into concept decks | Solves the "why come back today" problem learning apps have |
-| Audio and podcasts | Decks read out as audio from the same text | Fits commutes and the gym at no extra writing cost |
+| Audio and podcasts | Audio cards, or decks read out as audio where cards have text | Fits commutes and the gym; free only for text-based cards |
 | Spaced-repetition tools (Anki-style) | Recall questions exported or scheduled | Proven learning science; retention you can measure |
 | Teams and companies (B2B) | Onboarding decks, internal knowledge graphs | Companies pay for outcomes such as faster ramp-up |
 | Communities (cohorts, discussion per card) | Threads attached to cards, not an open feed | Adds discussion without turning into doomscrolling |
@@ -196,7 +197,7 @@ It fits best as a **structured, verified layer underneath other media**, not as 
 | Ad-supported revenue | Ads reward attention; this product deliberately uses less of it |
 | Breaking news and speed | Human verification is slow; aggregators and X will always be first |
 | Entertainment-first content | Cards are built to end; reels win on pure entertainment |
-| Hands-on skills (cooking, sports, physical crafts) | Text alone can't replace demonstration; video-heavy cards are expensive to produce and verify |
+| Hands-on skills (cooking, sports, physical crafts) | Video cards make these possible, but they are expensive to produce and verify, and still can't replace practice |
 | Very broad catalogue early on | Writing time limits coverage; a thin graph across many subjects has no depth |
 | Streak-anxiety gamification | Raises retention but brings back the pressure the product rejects |
 | Fully open user-generated content (UGC) without review | Quality and verification collapse; clickbait returns |
@@ -205,7 +206,7 @@ It fits best as a **structured, verified layer underneath other media**, not as 
 
 ## Risks
 
-- **Writing effort.** The earlier estimate (about 1.5–2 hours per card, about 25 hours per 15-card path) was for 3–5 minute text cards. It needs redoing for 1–2 minute multimedia cards and 10–15 minute decks. Multimedia (video, interactive) will cost more per minute than text.
+- **Production effort.** The earlier estimate (about 1.5–2 hours per card, about 25 hours per 15-card path) was for 3–5 minute text cards. It needs redoing for 1–2 minute multimedia cards and 10–15 minute decks. Multimedia (video, interactive) will cost more per minute than text.
 - **Completion stays hard.** Short cards help, but most learning products lose most learners.
 - **The graph's value comes late.** It only shows after about 100–200 cards; before that it looks like a blog.
 - **Tag sprawl.** With many tags on cards and decks, and no weekly review, the list drifts (duplicates, synonyms, one-off labels) and the graph decays. The fixed list and review process exist to prevent this.
@@ -276,6 +277,7 @@ Expert creators already have long-form content that people don't finish. The way
 
 _Decisions made during discussion, newest first. Each entry: date — decision — reasoning._
 
+- **2026-11-28** — **Text is not the core medium.** A card uses whatever mix of media best conveys its idea; text is not required. _(Replaces "text is the core medium" from the original vision.)_
 - **2026-11-28** — **Checks live at the end of a deck** (the Finish deck step), plus spaced checks days later. Cards contain no checks. A single recall question is called a **check**. This keeps cards lean and measures recall at the deck, the smallest unit that stands alone.
 - **2026-11-28** — **A card is multimedia content that conveys one idea in 1–2 minutes, with no fixed sections.** A card does not have to stand alone; the **deck is the smallest standalone unit**. **No single-card decks.** _(Replaces the five-part card: hook, idea, example, check, connects.)_
 - **2026-11-28** — **Cards are 1–2 minutes; decks are about 10–15 minutes.** A deck should feel like finishing something meaningful without being so heavy that learners quit. Sizes are starting targets, tuned for everyone from learner data. _(Replaces 3–5 minute cards and 10–20 card, one-hour decks.)_
@@ -292,6 +294,7 @@ _Decisions made during discussion, newest first. Each entry: date — decision �
 
 ## Changelog
 
+- **2026-11-28** — Removed "text is the core medium" from the vision. Updated the Brilliant comparison, audio row, hands-on skills row and the production-effort risk. Opened a question on text equivalents for non-text media.
 - **2026-11-28** — Added Check to the glossary. Moved checks to the end of decks. Updated the learning-principles list and rules. Removed the open question "where do checks live".
 - **2026-11-28** — Rewrote the Card definition and "1. The card" section: multimedia, no fixed sections, not standalone. The deck is now the standalone unit, and single-card decks are dropped. Updated incentives (no fixed template) and opened questions on checks, hooks, text and the review standard. Re-applied the card and deck size changes, which had been overwritten on disk.
 - **2026-11-28** — Reorganised the glossary into Content, Graph, Learner activity and Parked. Added Version, Recall and Time on card. Deck is now 1+ cards in one sitting. Track is now built from deck relations. Added the agreed rules.
